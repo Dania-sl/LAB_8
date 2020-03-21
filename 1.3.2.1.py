@@ -14,7 +14,7 @@ while True:
 
     for i in range(shapeArray):
         userArray[i] = random.randint(0, 10)  # заповнення списку рвндомними елементами
-    count = 2
+    count = 0
     print(userArray)
     elementIndex = 0  # задання індекму елемента для пошуку
     lenArray = len(userArray)
