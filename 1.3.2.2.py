@@ -18,16 +18,20 @@ while True:
     leftLimit = 0  # встановлення лівої границі
     rightLimit = len(userArray)  # встановлення правої границі
 
+    count = 0
     while leftLimit < rightLimit - 1:
+        count += 1
         mid = (leftLimit + rightLimit) // 2  # знаходження індексу середнього елементу
         if userArray[mid] > searchingElement:  # порівння елементу під індексом mid з шуканим елементом
             rightLimit = mid  # пересування правлї границі на позицію mid
+            count += 1
         else:
+            count += 1
             leftLimit = mid  # пересунення лівої границі на позицію mid
     if leftLimit >= 0 and userArray[leftLimit] == searchingElement:  # перевірка елементу на входження в список
         print(leftLimit)
     else:
-        print('no element')
+        print('no element', count)
     time = timeit.timeit('"-".join(str(n) for n in range(100))', number=10000)
     print('time:', time)
     if input('if you want continue, press Enter ') != '':
