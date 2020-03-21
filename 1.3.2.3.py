@@ -25,15 +25,18 @@ while True:
 
     i = -1  # задання індексу елемента першого списку
     j = 0  # задання індексу елемента другого списку
+    count = 0
     while j < len(userArray2) and i < (
             len(userArray1) - len(userArray2)):  # циклічне виконання доки індекс елементу другого списку менший за кількість елементів цього списку
         j = 0  # обнулення індексу порвняльного елементу
         i += 1  # наступний індекс елементу який порівнюється
+        count += 2
         while j < len(userArray2) and userArray2[j] == userArray1[i + j]:  # циксічна перевірка елементів списку на рівність
             j += 1  # вибір індексу наступного елементу
+            count += 2
 
     if j == len(userArray2):
-        print(f'substring found in {i} position')
+        print(f'substring found in {i} position', count)
     else:
         print('element not found')
     time = timeit.timeit('"-".join(str(n) for n in range(100))', number=10000)
